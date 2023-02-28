@@ -1,0 +1,55 @@
+plugins {
+    id "java"
+    id "maven-publish"
+}
+apply plugin: "java"
+apply plugin: "maven-publish"
+
+
+group = PROJECT_GROUP
+version = PROJECT_VERSION
+description = PROJECT_DESCRIPTION
+
+repositories {
+    maven {
+        url REPOSITORY2
+        credentials {
+            username = REPOSITORY_USERNAME2
+            password = REPOSITORY_PASSWORD2
+        }
+    }
+}
+compileJava {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+    options.encoding = "UTF-8"
+}
+
+compileTestJava {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+    options.encoding = "UTF-8"
+    options.compilerArgs += "-parameters"
+}
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = group
+            artifactId = PROJECT_ARTIFACT
+            version = version
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username = REPOSITORY_USERNAME2
+                password = REPOSITORY_PASSWORD2
+            }
+            println 'a simple message'
+            url = PUBLISH_REPOSITORY
+        }
+    }
+}

@@ -1,0 +1,13 @@
+pluginManagement {
+    repositories {
+        maven {
+            url REPOSITORY2
+            credentials {
+                username = REPOSITORY_USERNAME2
+                password = REPOSITORY_PASSWORD2
+            }
+        }
+    }
+}
+rootProject.name = 'app-core'
+

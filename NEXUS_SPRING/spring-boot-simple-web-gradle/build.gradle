@@ -1,0 +1,30 @@
+
+plugins {
+    id 'java'
+    id "maven-publish"
+    id 'org.springframework.boot' version '2.7.9'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = PROJECT_GROUP
+version = PROJECT_VERSION
+description = PROJECT_DESCRIPTION
+sourceCompatibility = '11'
+
+repositories {
+    maven {
+        url REPOSITORY2
+        credentials {
+            username = REPOSITORY_USERNAME2
+            password = REPOSITORY_PASSWORD2
+        }
+        allowInsecureProtocol = true
+    }
+}
+
+dependencies {
+    implementation  'com.imran.appcore:app-core:4.0.0.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
