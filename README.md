@@ -15,9 +15,7 @@ mvnrepository: https://mvnrepository.com/artifact/org.apache.phoenix/phoenix-cor
 
 
 
-For Maven Need to update maven settings.xml file for 
-
-
+For Maven download dependency Need to update maven settings.xml file for 
 servers:
 
 		<server>
@@ -32,3 +30,13 @@ mirrors:
 		 <mirrorOf>*</mirrorOf>
 		 <url>http://localhost:8081/repository/maven-public/</url>
 		</mirror>
+		
+For Deploy to reposotory Project: 
+
+	      <distributionManagement>
+		<repository>
+			<id>imranmadbar-nexus-repoid</id>
+			<url>http://localhost:8081/repository/imranmadbar-repo/</url>
+		</repository>
+	      </distributionManagement>
+
