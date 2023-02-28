@@ -3,7 +3,7 @@
 Config Sonatype Nexus Repository Manager
 -----------------------------------------------------
 
-.\nexus.exe /run
+Run service: .\nexus.exe /run
 
 ![image](https://user-images.githubusercontent.com/32607915/221814594-e990a508-0189-4c04-b444-2bdc6d869a00.png)
 
